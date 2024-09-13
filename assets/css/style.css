@@ -1,0 +1,183 @@
+/*----------- Google fonts ------*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+CU:wght@100..400&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/*----------- Variaveis ------*/
+:root {
+    /* Cores */
+    --color-primary: #FF4B57;
+    --color-secondary: #FF4562;
+    --color-background: #23253B;
+    --color-border: #e0e0e0;
+    --color-text: #FCFEFF;
+	--color-second-text: #35374D;
+    --color-btn-bg: var(--color-primary);
+    --color-btn-text: #fff;
+	--color-bg-header: #212337;
+	--color-bg-input: #282A41;
+
+    /* Margins e Padding */
+    --margin-sm: 8px;
+    --margin-md: 16px;
+    --margin-lg: 32px;
+    --padding-sm: 8px;
+    --padding-md: 16px;
+    --padding-lg: 32px;
+
+    /* Bordas */
+    --border-radius-sm: 4px;
+    --border-radius-md: 8px;
+    --border-radius-lg: 16px;
+    --border-width: 2px;
+
+    /* Z-Index */
+    --z-index-low: 1;
+    --z-index-mid: 10;
+    --z-index-high: 100;
+
+    /* Sombras */
+    --shadow-sm: 0px 1px 3px rgba(0, 0, 0, 0.12);
+    --shadow-md: 0px 3px 6px rgba(0, 0, 0, 0.16);
+    --shadow-lg: 0px 10px 20px rgba(0, 0, 0, 0.24);
+
+    /* Fontes */
+    --font-family: 'Roboto', sans-serif;
+    --font-size-sm: 12px;
+    --font-size-md: 16px;
+    --font-size-lg: 24px;
+    --line-height: 1.5;
+}
+
+/*----------- Reset ------*/
+*{
+	padding: 0px;
+	margin: 0px;
+	box-sizing: border-box;
+	color: var(--color-text);
+}
+body {
+    background-color: var(--color-background);
+    font-family: var(--font-family);
+    font-size: var(--font-size-md);
+}
+a, abbr{
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+input, button{
+    border: none;
+    background-color: transparent;
+}
+input{
+    outline: none;
+}
+button {
+    background-color: transparent;
+	border: none;
+	color: var(--color-btn-text);
+}
+
+/*------------------  class -----------------*/
+.container {
+	padding: var(--padding-md);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.header {
+    background-color: var(--color-bg-header);
+    box-shadow: var(--shadow-sm);
+    z-index: var(--z-index-high);
+}
+.footer {
+    background-color: var(--color-primary);
+    padding: var(--padding-md);
+    text-align: center;
+    color: var(--color-btn-text);
+}
+
+.flex-inline, .flex-center,
+.flex-col, .flex-row, .flex-sb{
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+}
+.flex-center{
+	justify-content: center;
+}
+.flex-col{
+	flex-direction: column;
+}
+.flex-sb{
+	justify-content: space-between;
+}
+.grid{
+	display: grid;
+}
+.hide{
+	display: none;
+}
+.show{
+	display: block;
+}
+/*---------------- navBar -------------------*/
+.menu__mobile{
+	display: none;
+}
+.nav__list{
+	column-gap: var(--margin-lg);
+}
+.nav_logo h1{
+	cursor: pointer;
+	font-family: "Playwrite CU", cursive;
+	font-size: var(--font-size-lg);
+	color: var(--color-text);
+	transition: color 1s ease;
+}
+.logo_color{
+	transition: color 1s ease;
+	color: var(--color-primary);
+}
+.nav__link:hover{
+	transition: all ease .5s;
+	color: var(--color-primary);
+}
+/* Media Queries */
+
+/* Telas pequenas (tablets em modo retrato e menores) */
+@media (max-width: 768px) {
+    :root {
+        --font-size-md: 14px;
+        --padding-md: 12px;
+        --margin-md: 12px;
+        --border-radius-md: 6px;
+    }
+    .container {
+        padding: var(--padding-md);
+    }
+	.header{
+		position: relative;
+	}
+    button {
+        padding: var(--padding-sm);
+    }
+	.menu__mobile{
+		display: block;
+	}
+	.menu__mobile i{
+		font-size: var(--font-size-lg);
+	}
+	.nav__list{
+		top: 100%;
+		right: 20px;
+		width: 200px;
+		padding: 20px;
+		row-gap: 20px;
+		display: none;
+		position: absolute;
+		flex-direction: column;
+		background-color: var(--color-bg-header);
+	}
+}
